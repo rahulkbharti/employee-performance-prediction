@@ -60,6 +60,26 @@ python app.py
 
 ```
 
+## Output
+
+Here are some screenshots of the application:
+
+### Home Page
+
+![Home Page](Outputs/Home.png)
+
+### About Page
+
+![About Page](Outputs/About.png)
+
+### Prediction Form
+
+![Prediction Form](Outputs/Predict.png)
+
+### Result Page
+
+![Result Page](Outputs/Result.png)
+
 ## Contributing
 
 Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTING.md) before submitting a pull request.
