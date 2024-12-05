@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% block title %}Predict{% endblock %}
+{% block content %}
+<header>
+  <h1>Predict Employee Performance</h1>
+</header>
+<form action="{{ url_for('predict') }}" method="POST" style="width: 800px; margin: 0 auto;">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="quarter">Quarter:</label>
+        <select id="quarter" name="quarter" class="form-control" required>
+          <option value="Quarter1">Quarter 1</option>
+          <option value="Quarter2">Quarter 2</option>
+          <option value="Quarter3">Quarter 3</option>
+          <option value="Quarter4">Quarter 4</option>
+          <option value="Quarter5">Quarter 5</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="department">Department:</label>
+        <select id="department" name="department" class="form-control" required>
+          <option value="sweing">Sweing</option>
+          <option value="finishing">Finishing</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="day">Day:</label>
+        <select id="day" name="day" class="form-control" required>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <!-- <option value="Friday">Friday (Holiday)</option> -->
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="team">Team:</label>
+        <select id="team" name="team" class="form-control" required>
+          <script>
+            for (let i = 1; i <= 12; i++) {
+              document.write(`<option value="${i}">Team ${i}</option>`);
+            }
+          </script>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="targeted_productivity">Targeted Productivity:</label>
+        <input type="text" id="targeted_productivity" name="targeted_productivity" class="form-control"
+          placeholder="Enter value" required />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="smv">SMV:</label>
+        <input type="text" id="smv" name="smv" class="form-control" placeholder="0-100" required />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="over_time">Over Time:</label>
+        <input type="text" id="over_time" name="over_time" class="form-control" placeholder="0-26000" min="0"
+          max="26000" required />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="incentive">Incentive:</label>
+        <input type="text" id="incentive" name="incentive" class="form-control" placeholder="0-36000" min="0"
+          max="36000" required />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="idle_time">Idle Time:</label>
+        <input type="text" id="idle_time" name="idle_time" class="form-control" placeholder="0-300" min="0" max="300"
+          required />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="text">Idle Men:</label>
+        <input type="number" id="idle_men" name="idle_men" class="form-control" placeholder="0-100" min="0" max="100"
+          required />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="no_of_style_change">No. of Style Change:</label>
+        <select id="no_of_style_change" name="no_of_style_change" class="form-control" required>
+          <option value="0">Style 1</option>
+          <option value="1">Style 2</option>
+          <option value="2">Style 3</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="no_of_workers">No. of Workers:</label>
+        <input type="number" id="no_of_workers" name="no_of_workers" class="form-control" placeholder="0-100" min="0"
+          max="100" required />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="month">Month:</label>
+        <select id="month" name="month" class="form-control" required>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
