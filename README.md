@@ -29,7 +29,7 @@ Employee performance prediction is crucial for organizations to identify high-pe
 To get started with this project, clone the repository and install the required dependencies:
 
 ```bash
-git clone https://github.com/yourusername/employee-performance-prediction.git
+git clone https://github.com/rahulkbharti/employee-performance-prediction.git
 cd employee-performance-prediction
 ###
 # Create Environment and Activate
